@@ -26,7 +26,7 @@
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@9.15.8/styles/atom-one-dark.css,gh/nexmoe/nexmoe.github.io@latest/lib/mdui_043tiny/css/mdui.css,gh/nexmoe/nexmoe.github.io@latest/lib/iconfont/iconfont.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?v=233" crossorigin>
   
-  <link rel="stylesheet" href="/css/style.css?v=1607585173974">
+  <link rel="stylesheet" href="/css/style.css?v=1607585793179">
 <meta name="generator" content="Hexo 5.2.0"></head>
 
 <body class="mdui-drawer-body-left">
@@ -165,7 +165,7 @@
   
   <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
     <a><i class="nexmoefont icon-calendar-fill"></i>2020年12月10日</a>
-    <a><i class="nexmoefont icon-areachart"></i>536 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>538 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
 </div>
 
@@ -197,34 +197,37 @@
 </ol>
 <p>这里这两个环境相信大家应该都配置好了，如果还没配置可以百度下。</p>
 <h2 id="正式搭建"><a href="#正式搭建" class="headerlink" title="正式搭建"></a>正式搭建</h2><p>可以进入官网仔细了解：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-
+<pre><code class="sh">npm install hexo-cli -g</code></pre>
 <p>安装完成之后，创建一个 <strong><em>空文件夹</em></strong> 在这个文件下执行下面命令</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
+<pre><code class="sh">hexo init</code></pre>
 <p>执行完成后，你会发现文件夹下生成一些文件，文件具体意义可以参考官网文档了解。<strong>写博客前先了解下是很有必要的</strong></p>
 <p>分别执行以下命令，打开 localhost:4000, 就可以跑起来了。</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
+<pre><code class="sh">hexo generate
+hexo server</code></pre>
 <h2 id="将博客部署到自己gitbuh-io上"><a href="#将博客部署到自己gitbuh-io上" class="headerlink" title="将博客部署到自己gitbuh.io上"></a>将博客部署到自己gitbuh.io上</h2><p>以我自己的地址为例：<a target="_blank" rel="noopener" href="https://github.com/markgong-gd/markgong-gd.github.io.git">https://github.com/markgong-gd/markgong-gd.github.io.git</a></p>
 <p>在刚刚生成的文件里找到 <strong><em>_config.yml</em></strong> 文件，修改以下配置</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as &#x27;http://example.com/child&#x27; and root as &#x27;/child/&#x27;</span></span><br><span class="line"><span class="attr">url:</span> <span class="string">https://markgong-gd.github.io/</span></span><br><span class="line"></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/markgong-gd/markgong-gd.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<pre><code class="yml"># URL
+## If your site is put in a subdirectory, set url as &#39;http://example.com/child&#39; and root as &#39;/child/&#39;
+url: https://markgong-gd.github.io/
 
+deploy:
+  type: git
+  repo: https://github.com/markgong-gd/markgong-gd.github.io.git
+  branch: master</code></pre>
 <ul>
 <li>安装部署工具</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
+<pre><code class="sh">npm install hexo-deployer-git --save</code></pre>
 <p>执行部署命令</p>
 <p>hexo clean： 清楚缓存</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-
+<pre><code class="sh">hexo clean
+hexo deploy</code></pre>
 <p>现在可以在你的 {github username}.github.io 看到你的页面了</p>
 <h2 id="主题使用"><a href="#主题使用" class="headerlink" title="主题使用"></a>主题使用</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo Theme</a></p>
 <p>找到你需要的主题进入 <strong><em>themes</em></strong> 文件夹，**<em>在themes下**</em>克隆 <code>git clone https://github.com/&lt;username&gt;/&lt;reponame&gt;</code></p>
 <p>返回到根目录执行以下命令</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
+<pre><code class="sh">hexo generate
+hexo server</code></pre>
 <p>打开 localhost:4000 验证是成功，执行部署命令发布</p>
 <p>最后有问题，可以评论，看到会回复！文笔不好，感谢大家支持！</p>
 
@@ -275,7 +278,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
- <script src="/js/app.js?v=1607585173975"></script>
+ <script src="/js/app.js?v=1607585793180"></script>
 
   
 
